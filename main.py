@@ -15,10 +15,10 @@ os.system(f"python3 {cmseek_location} -u {target_url}")
 print("CMSeek scan completed.")
 
 # Specify the absolute path for the output file
-json_output_file = "/home/def/unite/NewOne/reports.json"
+json_output_file = "/home/kali/NO/reports.json"
 print("Starting WPScan scan...")
 
 # Running WPScan with sudo and providing the sudo password via stdin using 'echo' and '|'
-os.system(f"sudo wpscan --url {target_url} --enumerate u,p --plugins-detection aggressive "
+os.system(f"wpscan --url {target_url} --enumerate u,p --plugins-detection aggressive "
           f"--api-token VUx0qG6XBJkZ7VJ6GjDssKsquBhjouSwsKGEHclULIg --disable-tls-checks -o {json_output_file} --format json")
 print(f"WPScan scan completed and saved to {json_output_file}.")
