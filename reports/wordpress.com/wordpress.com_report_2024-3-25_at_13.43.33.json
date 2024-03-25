@@ -1,0 +1,52 @@
+
+[+] FireWall Detector
+[++] Firewall not detected
+
+[+] Detecting Joomla Version
+[++] ver 404
+
+
+[+] Core Joomla Vulnerability
+[++] Target Joomla core is not vulnerable
+
+[+] Full Path Disclosure (FPD)
+[++] Full Path Disclosure (FPD) in 'https://wordpress.com/index.php?option=com_jotloader&section[]=' : 
+
+
+[+] Checking apache info/status files
+[++] Readable info/status files are not found
+
+[+] admin finder
+[++] Admin page : https://wordpress.com/admin/
+
+[+] Checking robots.txt existing
+[++] robots.txt is found
+path : https://wordpress.com/robots.txt 
+
+Interesting path found from robots.txt
+https://wordpress.com/wp-admin/
+https://wordpress.com/wp-admin/admin-ajax.php
+https://wordpress.com/typo/
+https://wordpress.com/read/
+https://wordpress.com/log-in$
+https://wordpress.com/log-in?
+https://wordpress.com/wp-login.php
+https://wordpress.com/wp-signup.php
+https://wordpress.com/press-this.php
+https://wordpress.com/remote-login.php
+https://wordpress.com/activate/
+https://wordpress.com/cgi-bin/
+https://wordpress.com/mshots/v1/
+https://wordpress.com/next/
+https://wordpress.com/public.api/
+
+
+[+] Finding common backup files name
+[++] Backup files are not found
+
+[+] Finding common log files name
+[++] .well-known/security.txt path :  https://wordpress.com/.well-known/security.txt
+
+
+[+] Checking sensitive config.php.x file
+[++] Readable config files are not found

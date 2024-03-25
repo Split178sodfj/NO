@@ -1,12 +1,539 @@
 {
-    "last_updated": "2024-03-24 10:52:00.627801",
-    "results": [
-        {
-            "https://wordpress.com": {
-                "cms_id": "wp",
-                "date": "2024-03-24 10:31:44.676064",
-                "report": "/home/kali/NO/Result/wordpress.com/cms.json"
-            }
+  "banner": {
+    "description": "WordPress Security Scanner by the WPScan Team",
+    "version": "3.8.20",
+    "authors": [
+      "@_WPScan_",
+      "@ethicalhack3r",
+      "@erwan_lr",
+      "@firefart"
+    ],
+    "sponsor": "Sponsored by Automattic - https://automattic.com/"
+  },
+  "start_time": 1711388135,
+  "start_memory": 52531200,
+  "target_url": "https://wordpress.com/",
+  "target_ip": "192.0.78.17",
+  "effective_url": "https://wordpress.com/",
+  "interesting_findings": [
+    {
+      "url": "https://wordpress.com/",
+      "to_s": "Headers",
+      "type": "headers",
+      "found_by": "Headers (Passive Detection)",
+      "confidence": 100,
+      "confirmed_by": {
+
+      },
+      "references": {
+
+      },
+      "interesting_entries": [
+        "server: nginx",
+        "x-hacker: Want root?  Visit join.a8c.com/hacker and mention this header.",
+        "host-header: WordPress.com",
+        "x-ac: 2.arn _dca MISS",
+        "alt-svc: h3=\":443\"; ma=86400"
+      ]
+    },
+    {
+      "url": "https://wordpress.com/robots.txt",
+      "to_s": "robots.txt found: https://wordpress.com/robots.txt",
+      "type": "robots_txt",
+      "found_by": "Robots Txt (Aggressive Detection)",
+      "confidence": 100,
+      "confirmed_by": {
+
+      },
+      "references": {
+
+      },
+      "interesting_entries": [
+        "/wp-admin/",
+        "/wp-admin/admin-ajax.php",
+        "/typo/",
+        "/read/",
+        "/log-in$",
+        "/log-in?",
+        "/wp-login.php",
+        "/wp-signup.php",
+        "/press-this.php",
+        "/remote-login.php",
+        "/activate/",
+        "/cgi-bin/",
+        "/mshots/v1/",
+        "/next/",
+        "/public.api/"
+      ]
+    },
+    {
+      "url": "https://wordpress.com/xmlrpc.php",
+      "to_s": "XML-RPC seems to be enabled: https://wordpress.com/xmlrpc.php",
+      "type": "xmlrpc",
+      "found_by": "Direct Access (Aggressive Detection)",
+      "confidence": 100,
+      "confirmed_by": {
+
+      },
+      "references": {
+        "url": [
+          "http://codex.wordpress.org/XML-RPC_Pingback_API"
+        ],
+        "metasploit": [
+          "auxiliary/scanner/http/wordpress_ghost_scanner",
+          "auxiliary/dos/http/wordpress_xmlrpc_dos",
+          "auxiliary/scanner/http/wordpress_xmlrpc_login",
+          "auxiliary/scanner/http/wordpress_pingback_access"
+        ]
+      },
+      "interesting_entries": [
+
+      ]
+    },
+    {
+      "url": "https://wordpress.com/wp-content/mu-plugins/",
+      "to_s": "This site has 'Must Use Plugins': https://wordpress.com/wp-content/mu-plugins/",
+      "type": "mu_plugins",
+      "found_by": "Direct Access (Aggressive Detection)",
+      "confidence": 80,
+      "confirmed_by": {
+
+      },
+      "references": {
+        "url": [
+          "http://codex.wordpress.org/Must_Use_Plugins"
+        ]
+      },
+      "interesting_entries": [
+
+      ]
+    },
+    {
+      "url": "https://wordpress.com/wp-cron.php",
+      "to_s": "The external WP-Cron seems to be enabled: https://wordpress.com/wp-cron.php",
+      "type": "wp_cron",
+      "found_by": "Direct Access (Aggressive Detection)",
+      "confidence": 60,
+      "confirmed_by": {
+
+      },
+      "references": {
+        "url": [
+          "https://www.iplocation.net/defend-wordpress-from-ddos",
+          "https://github.com/wpscanteam/wpscan/issues/1299"
+        ]
+      },
+      "interesting_entries": [
+
+      ]
+    }
+  ],
+  "version": null,
+  "main_theme": null,
+  "plugins": {
+    "akismet": {
+      "slug": "akismet",
+      "location": "https://wordpress.com/wp-content/plugins/akismet/",
+      "latest_version": "5.3.2",
+      "last_updated": "2024-03-21T00:55:00.000Z",
+      "outdated": false,
+      "readme_url": false,
+      "directory_listing": false,
+      "error_log_url": null,
+      "found_by": "Known Locations (Aggressive Detection)",
+      "confidence": 80,
+      "interesting_entries": [
+        "https://wordpress.com/wp-content/plugins/akismet/, status: 403"
+      ],
+      "confirmed_by": {
+
+      },
+      "vulnerabilities": [
+
+      ],
+      "version": null
+    },
+    "coblocks": {
+      "slug": "coblocks",
+      "location": "https://wordpress.com/wp-content/plugins/coblocks/",
+      "latest_version": "3.1.7",
+      "last_updated": "2024-03-11T18:06:00.000Z",
+      "outdated": false,
+      "readme_url": false,
+      "directory_listing": false,
+      "error_log_url": null,
+      "found_by": "Known Locations (Aggressive Detection)",
+      "confidence": 80,
+      "interesting_entries": [
+        "https://wordpress.com/wp-content/plugins/coblocks/, status: 403"
+      ],
+      "confirmed_by": {
+
+      },
+      "vulnerabilities": [
+
+      ],
+      "version": null
+    },
+    "custom-fonts": {
+      "slug": "custom-fonts",
+      "location": "https://wordpress.com/wp-content/plugins/custom-fonts/",
+      "latest_version": "2.1.3",
+      "last_updated": "2024-01-16T07:15:00.000Z",
+      "outdated": false,
+      "readme_url": false,
+      "directory_listing": false,
+      "error_log_url": null,
+      "found_by": "Known Locations (Aggressive Detection)",
+      "confidence": 80,
+      "interesting_entries": [
+        "https://wordpress.com/wp-content/plugins/custom-fonts/, status: 403"
+      ],
+      "confirmed_by": {
+
+      },
+      "vulnerabilities": [
+
+      ],
+      "version": null
+    },
+    "lazy-load": {
+      "slug": "lazy-load",
+      "location": "https://wordpress.com/wp-content/plugins/lazy-load/",
+      "latest_version": "0.6.1",
+      "last_updated": "2018-11-22T04:43:00.000Z",
+      "outdated": true,
+      "readme_url": "https://wordpress.com/wp-content/plugins/lazy-load/readme.txt",
+      "directory_listing": false,
+      "error_log_url": null,
+      "found_by": "Known Locations (Aggressive Detection)",
+      "confidence": 80,
+      "interesting_entries": [
+        "https://wordpress.com/wp-content/plugins/lazy-load/, status: 403"
+      ],
+      "confirmed_by": {
+
+      },
+      "vulnerabilities": [
+
+      ],
+      "version": {
+        "number": "0.3",
+        "confidence": 100,
+        "found_by": "Readme - Stable Tag (Aggressive Detection)",
+        "interesting_entries": [
+          "https://wordpress.com/wp-content/plugins/lazy-load/readme.txt"
+        ],
+        "confirmed_by": {
+          "Readme - ChangeLog Section (Aggressive Detection)": {
+            "confidence": 50,
+            "interesting_entries": [
+              "https://wordpress.com/wp-content/plugins/lazy-load/readme.txt"
+            ]
+          }
         }
-    ]
+      }
+    },
+    "syntaxhighlighter": {
+      "slug": "syntaxhighlighter",
+      "location": "https://wordpress.com/wp-content/plugins/syntaxhighlighter/",
+      "latest_version": "3.7.0",
+      "last_updated": "2023-12-05T22:54:00.000Z",
+      "outdated": true,
+      "readme_url": "https://wordpress.com/wp-content/plugins/syntaxhighlighter/readme.txt",
+      "directory_listing": false,
+      "error_log_url": null,
+      "found_by": "Known Locations (Aggressive Detection)",
+      "confidence": 80,
+      "interesting_entries": [
+        "https://wordpress.com/wp-content/plugins/syntaxhighlighter/, status: 403"
+      ],
+      "confirmed_by": {
+
+      },
+      "vulnerabilities": [
+
+      ],
+      "version": {
+        "number": "3.6.2",
+        "confidence": 100,
+        "found_by": "Readme - Stable Tag (Aggressive Detection)",
+        "interesting_entries": [
+          "https://wordpress.com/wp-content/plugins/syntaxhighlighter/readme.txt"
+        ],
+        "confirmed_by": {
+          "Readme - ChangeLog Section (Aggressive Detection)": {
+            "confidence": 50,
+            "interesting_entries": [
+              "https://wordpress.com/wp-content/plugins/syntaxhighlighter/readme.txt"
+            ]
+          }
+        }
+      }
+    },
+    "woocommerce": {
+      "slug": "woocommerce",
+      "location": "https://wordpress.com/wp-content/plugins/woocommerce/",
+      "latest_version": "8.6.1",
+      "last_updated": "2024-03-19T14:51:00.000Z",
+      "outdated": false,
+      "readme_url": false,
+      "directory_listing": false,
+      "error_log_url": null,
+      "found_by": "Known Locations (Aggressive Detection)",
+      "confidence": 80,
+      "interesting_entries": [
+        "https://wordpress.com/wp-content/plugins/woocommerce/, status: 403"
+      ],
+      "confirmed_by": {
+
+      },
+      "vulnerabilities": [
+
+      ],
+      "version": null
+    },
+    "woocommerce-gateway-stripe": {
+      "slug": "woocommerce-gateway-stripe",
+      "location": "https://wordpress.com/wp-content/plugins/woocommerce-gateway-stripe/",
+      "latest_version": "8.0.1",
+      "last_updated": "2024-03-13T21:17:00.000Z",
+      "outdated": true,
+      "readme_url": "https://wordpress.com/wp-content/plugins/woocommerce-gateway-stripe/readme.txt",
+      "directory_listing": false,
+      "error_log_url": null,
+      "found_by": "Known Locations (Aggressive Detection)",
+      "confidence": 80,
+      "interesting_entries": [
+        "https://wordpress.com/wp-content/plugins/woocommerce-gateway-stripe/, status: 403"
+      ],
+      "confirmed_by": {
+
+      },
+      "vulnerabilities": [
+
+      ],
+      "version": {
+        "number": "7.8.1",
+        "confidence": 100,
+        "found_by": "Readme - Stable Tag (Aggressive Detection)",
+        "interesting_entries": [
+          "https://wordpress.com/wp-content/plugins/woocommerce-gateway-stripe/readme.txt"
+        ],
+        "confirmed_by": {
+          "Readme - ChangeLog Section (Aggressive Detection)": {
+            "confidence": 50,
+            "interesting_entries": [
+              "https://wordpress.com/wp-content/plugins/woocommerce-gateway-stripe/readme.txt"
+            ]
+          }
+        }
+      }
+    },
+    "woocommerce-payments": {
+      "slug": "woocommerce-payments",
+      "location": "https://wordpress.com/wp-content/plugins/woocommerce-payments/",
+      "latest_version": "7.3.0",
+      "last_updated": "2024-03-06T19:44:00.000Z",
+      "outdated": false,
+      "readme_url": false,
+      "directory_listing": false,
+      "error_log_url": null,
+      "found_by": "Known Locations (Aggressive Detection)",
+      "confidence": 80,
+      "interesting_entries": [
+        "https://wordpress.com/wp-content/plugins/woocommerce-payments/, status: 403"
+      ],
+      "confirmed_by": {
+
+      },
+      "vulnerabilities": [
+
+      ],
+      "version": null
+    },
+    "woocommerce-paypal-payments": {
+      "slug": "woocommerce-paypal-payments",
+      "location": "https://wordpress.com/wp-content/plugins/woocommerce-paypal-payments/",
+      "latest_version": "2.6.0",
+      "last_updated": "2024-03-20T00:54:00.000Z",
+      "outdated": false,
+      "readme_url": false,
+      "directory_listing": false,
+      "error_log_url": null,
+      "found_by": "Known Locations (Aggressive Detection)",
+      "confidence": 80,
+      "interesting_entries": [
+        "https://wordpress.com/wp-content/plugins/woocommerce-paypal-payments/, status: 403"
+      ],
+      "confirmed_by": {
+
+      },
+      "vulnerabilities": [
+
+      ],
+      "version": null
+    },
+    "wp-postratings": {
+      "slug": "wp-postratings",
+      "location": "https://wordpress.com/wp-content/plugins/wp-postratings/",
+      "latest_version": "1.91.1",
+      "last_updated": "2023-08-09T03:05:00.000Z",
+      "outdated": true,
+      "readme_url": "https://wordpress.com/wp-content/plugins/wp-postratings/readme.txt",
+      "directory_listing": false,
+      "error_log_url": null,
+      "found_by": "Known Locations (Aggressive Detection)",
+      "confidence": 80,
+      "interesting_entries": [
+        "https://wordpress.com/wp-content/plugins/wp-postratings/, status: 403"
+      ],
+      "confirmed_by": {
+
+      },
+      "vulnerabilities": [
+
+      ],
+      "version": {
+        "number": "1.50",
+        "confidence": 80,
+        "found_by": "Readme - Stable Tag (Aggressive Detection)",
+        "interesting_entries": [
+          "https://wordpress.com/wp-content/plugins/wp-postratings/readme.txt"
+        ],
+        "confirmed_by": {
+
+        }
+      }
+    }
+  },
+  "users": {
+    "Jeremy Anderberg": {
+      "id": null,
+      "found_by": "Rss Generator (Passive Detection)",
+      "confidence": 100,
+      "interesting_entries": [
+
+      ],
+      "confirmed_by": {
+        "Rss Generator (Aggressive Detection)": {
+          "confidence": 50,
+          "interesting_entries": [
+
+          ]
+        }
+      }
+    },
+    "Breann McDede": {
+      "id": null,
+      "found_by": "Rss Generator (Passive Detection)",
+      "confidence": 100,
+      "interesting_entries": [
+
+      ],
+      "confirmed_by": {
+        "Rss Generator (Aggressive Detection)": {
+          "confidence": 50,
+          "interesting_entries": [
+
+          ]
+        }
+      }
+    },
+    "Luis Felipe Zaguini": {
+      "id": null,
+      "found_by": "Rss Generator (Passive Detection)",
+      "confidence": 100,
+      "interesting_entries": [
+
+      ],
+      "confirmed_by": {
+        "Rss Generator (Aggressive Detection)": {
+          "confidence": 50,
+          "interesting_entries": [
+
+          ]
+        }
+      }
+    },
+    "Paulo Aquino": {
+      "id": null,
+      "found_by": "Rss Generator (Passive Detection)",
+      "confidence": 100,
+      "interesting_entries": [
+
+      ],
+      "confirmed_by": {
+        "Rss Generator (Aggressive Detection)": {
+          "confidence": 50,
+          "interesting_entries": [
+
+          ]
+        }
+      }
+    },
+    "WordPress.com Staff": {
+      "id": null,
+      "found_by": "Rss Generator (Passive Detection)",
+      "confidence": 100,
+      "interesting_entries": [
+
+      ],
+      "confirmed_by": {
+        "Rss Generator (Aggressive Detection)": {
+          "confidence": 50,
+          "interesting_entries": [
+
+          ]
+        }
+      }
+    },
+    "Eric Binnion": {
+      "id": null,
+      "found_by": "Rss Generator (Passive Detection)",
+      "confidence": 100,
+      "interesting_entries": [
+
+      ],
+      "confirmed_by": {
+        "Rss Generator (Aggressive Detection)": {
+          "confidence": 50,
+          "interesting_entries": [
+
+          ]
+        }
+      }
+    },
+    "Even Tobiesen": {
+      "id": null,
+      "found_by": "Rss Generator (Passive Detection)",
+      "confidence": 100,
+      "interesting_entries": [
+
+      ],
+      "confirmed_by": {
+        "Rss Generator (Aggressive Detection)": {
+          "confidence": 50,
+          "interesting_entries": [
+
+          ]
+        }
+      }
+    }
+  },
+  "vuln_api": {
+    "plan": "free",
+    "requests_done_during_scan": 10,
+    "requests_remaining": "Unlimited"
+  },
+  "stop_time": 1711388399,
+  "elapsed": 264,
+  "requests_done": 2900,
+  "cached_requests": 33,
+  "data_sent": 3320469,
+  "data_sent_humanised": "3.167 MB",
+  "data_received": 27009718,
+  "data_received_humanised": "25.758 MB",
+  "used_memory": 261718016,
+  "used_memory_humanised": "249.594 MB"
 }

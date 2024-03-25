@@ -6,6 +6,9 @@ current_directory = os.getcwd()
 # Location of CMSeek
 cmseek_location = os.path.join(current_directory, "cmseek.py")
 
+# Location of JoomScan
+joomscan_location = os.path.join(current_directory, "joomscan.pl")
+
 # User-inputed URL
 target_url = input("Enter the URL to scan: ")
 
@@ -22,3 +25,10 @@ print("Starting WPScan scan...")
 os.system(f"wpscan --url {target_url} --enumerate u,p --plugins-detection aggressive "
           f"--api-token VUx0qG6XBJkZ7VJ6GjDssKsquBhjouSwsKGEHclULIg --disable-tls-checks -o {json_output_file} --format json")
 print(f"WPScan scan completed and saved to {json_output_file}.")
+
+
+
+# Running JoomScan scan
+print("Starting JoomScan scan...")
+os.system(f"perl {joomscan_location} -u {target_url}")
+print("JoomScan scan completed.")

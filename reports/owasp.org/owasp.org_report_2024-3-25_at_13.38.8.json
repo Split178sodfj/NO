@@ -1,0 +1,32 @@
+
+[+] FireWall Detector
+[++] Firewall detected : CloudFlare
+
+[+] Detecting Joomla Version
+[++] ver 404
+
+
+[+] Core Joomla Vulnerability
+[++] Target Joomla core is not vulnerable
+
+[+] Checking apache info/status files
+[++] Readable info/status files are not found
+
+[+] admin finder
+[++] Admin page not found
+
+[+] Checking robots.txt existing
+[++] robots.txt is found
+path : https://owasp.org/robots.txt 
+
+Interesting path found from robots.txt
+
+
+[+] Finding common backup files name
+[++] Backup files are not found
+
+[+] Finding common log files name
+[++] error log is not found
+
+[+] Checking sensitive config.php.x file
+[++] Readable config files are not found
